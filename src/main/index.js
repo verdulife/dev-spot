@@ -1,12 +1,17 @@
-import { app, shell, BrowserWindow, Tray, Menu, nativeImage } from 'electron'
+import { app, shell, BrowserWindow, Tray, Menu, nativeImage, globalShortcut } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 
+let mainWindow
+
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+  mainWindow = new BrowserWindow({
+    width: 600,
+    height: 80,
+    frame: false,
+    transparent: true,
+    resizable: false,
     show: false,
     autoHideMenuBar: true,
     skipTaskbar: true,
@@ -34,7 +39,9 @@ function createWindow() {
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+    mainWindow.openDevTools()
   } else {
+    mainWindow.on('blur', () => mainWindow.hide())
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 }
@@ -49,7 +56,7 @@ app.whenReady().then(() => {
   tray = new Tray(icon)
 
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Show', click: () => app.focus() },
+    { label: 'Show', click: () => mainWindow.show() },
     { label: 'Exit', click: () => app.quit() }
   ])
 
@@ -68,6 +75,10 @@ app.whenReady().then(() => {
   })
 
   createWindow()
+
+  globalShortcut.register('CommandOrControl+Space', () => {
+    mainWindow.show()
+  })
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
