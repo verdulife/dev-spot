@@ -1,22 +1,31 @@
 <script>
   import Interpreter from "js-interpreter";
-  import { transform } from "@babel/standalone";
+  import { log, transform } from "@babel/standalone";
+  import hljs from "highlight.js/lib/core";
+  import javascript from "highlight.js/lib/languages/javascript";
 
-  const interpreter = new Interpreter(`"use strict";`);
+  hljs.registerLanguage("javascript", javascript);
+
+  let interpreter = new Interpreter("");
+  const TEMP = [""];
+  let TEMP_INDEX = TEMP.length;
   let input;
   let output = "";
-  let TEMP = [""];
-  let TEMP_INDEX = TEMP.length;
+  let success = false;
+  let error = false;
 
   function handleValue() {
     try {
-      const babel = transform(input, { presets: ["env"] }).code;
-
-      interpreter.appendCode(babel) || "";
+      const { code } = transform(input, { presets: ["env"] });
+      interpreter.appendCode(code);
       interpreter.run();
-      output = interpreter.value || "";
 
-      console.log(interpreter);
+      const { value } = interpreter;
+
+      if (value === "use strict") output = "";
+      else output = value;
+
+      /* hljs.highlightElement(document.querySelector("output")); */
     } catch {
       output = "";
     }
@@ -29,16 +38,16 @@
 
     const inputQuery = input.split(":");
 
-    if (inputQuery[0] === "m")
+    if (inputQuery[1] === "clear") interpreter = new Interpreter("");
+    else if (inputQuery[0] === "m")
       window.open(`https://developer.mozilla.org/es/search?q=${inputQuery[1]}`);
     else if (inputQuery[0] === "s")
       window.open(`https://stackoverflow.com/search?q=${inputQuery[1]}`);
     else if (inputQuery[0] === "g")
-      window.open(`https://www.google.es/search?q=${inputQuery[1]}`, "_blank");
-    else {
-      input = output;
-      output = "";
-    }
+      window.open(`https://www.google.es/search?q=${inputQuery[1]}`);
+
+    input = output;
+    output = "";
   }
 
   function handleKey(e) {
@@ -56,10 +65,10 @@
 </script>
 
 <div id="drag" />
-<form on:submit|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit} spellcheck="false">
   <input
     type="text"
-    placeholder="Enjoy coding 🚀"
+    placeholder="🚀"
     bind:value={input}
     on:keyup={handleValue}
     on:keydown={handleKey}
@@ -83,21 +92,24 @@
     position: fixed;
     inset: 0.5em 1em;
     display: flex;
+    flex-direction: column;
     padding: 0.25em 0.5em;
+    transition: 200ms;
   }
 
   input {
     flex-grow: 1;
     background-color: transparent;
     color: #fafafa;
+    font-family: "Operator Mono Lig";
     font-size: 24px;
     border: none;
     outline: none;
   }
 
   output {
-    width: 100px;
-    color: #fafafa;
+    color: turquoise;
+    font-family: "Operator Mono Lig";
   }
 
   ::placeholder {
