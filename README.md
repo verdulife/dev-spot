@@ -1,34 +1,27 @@
-# dev-spot
+# jsline
+Electron based spotlight/launcher with js functionality.
 
-An Electron application with Svelte
+<br>
 
-## Recommended IDE Setup
+*Usage*
+--
+Run js expresions as you would on a browsers console.
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+*Why*
+--
+New implementations will add more awnsers to this question, but here some:
+- Fast calculator with all js methods
+- Faster way to check one line js solutions (ex. typeof [] //object)
 
-## Project Setup
+*Features*
+--
+- ES5 js interpreter
+- ArrowUp/Down terminal functionality like
+- Dev search wiht m:/s:/g: + [your_query] (MDN, StackOverflow, Google)
 
-### Install
-
-```bash
-$ npm install
-```
-
-### Development
-
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+*TODOS*
+--
+- Make it compatible with last ecmasript verions
+  * Use babeljs
+  * Find v8 engine interpreter
+- Add shell functionality
