@@ -1,16 +1,33 @@
 <script>
-  let value, output
+  import { evaluate } from 'mathjs'
+  let input
+  let output = ''
 
   function handleValue() {
-    output = eval(value)
+    const result = evaluate(input) || ''
+
+    if (typeof result === 'function') output = ''
+    else output = result
+  }
+
+  function handleSubmit() {
+    handleValue()
+    input = output
+    output = ''
   }
 </script>
 
 <div id="drag" />
-<input type="text" placeholder="Enjoy coding 🚀" bind:value on:change={handleValue} autofocus />
-<!-- <main>
+<form on:submit|preventDefault={handleSubmit}>
+  <input
+    type="text"
+    placeholder="Enjoy coding 🚀"
+    bind:value={input}
+    on:keyup={handleValue}
+    autofocus
+  />
   <output>{output}</output>
-</main> -->
+</form>
 
 <style>
   #drag {
@@ -22,16 +39,26 @@
     border-radius: 1em;
   }
 
-  input {
+  form {
     -webkit-app-region: no-drag;
     position: fixed;
     inset: 0.5em 1em;
-    font-size: 24px;
+    display: flex;
+    padding: 0.25em 0.5em;
+  }
+
+  input {
+    flex-grow: 1;
     background-color: transparent;
-    border: none;
     color: #fafafa;
+    font-size: 24px;
+    border: none;
     outline: none;
-    padding: 0.25em;
+  }
+
+  output {
+    width: 100px;
+    color: #fafafa;
   }
 
   ::placeholder {
