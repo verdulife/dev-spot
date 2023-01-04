@@ -1,8 +1,10 @@
 <script>
   import Interpreter from "js-interpreter";
-  import { log, transform } from "@babel/standalone";
+  import { transform } from "@babel/standalone";
   import hljs from "highlight.js/lib/core";
   import javascript from "highlight.js/lib/languages/javascript";
+  import JsIcon from "./icons/JsIcon.svelte";
+  import SearchIcon from "./icons/SearchIcon.svelte";
 
   hljs.registerLanguage("javascript", javascript);
 
@@ -11,8 +13,8 @@
   let TEMP_INDEX = TEMP.length;
   let input;
   let output = "";
-  let success = false;
   let error = false;
+  $: isJS = true;
 
   function handleValue() {
     try {
@@ -25,10 +27,16 @@
       if (value === "use strict") output = "";
       else output = value;
 
+      error = false;
+
       /* hljs.highlightElement(document.querySelector("output")); */
     } catch {
       output = "";
+      error = true;
     }
+
+    const inputQuery = input.split(":");
+    isJS = inputQuery.length > 1 ? false : true;
   }
 
   function handleSubmit() {
@@ -64,17 +72,27 @@
   }
 </script>
 
-<div id="drag" />
-<form on:submit|preventDefault={handleSubmit} spellcheck="false">
-  <input
-    type="text"
-    placeholder="🚀"
-    bind:value={input}
-    on:keyup={handleValue}
-    on:keydown={handleKey}
-    autofocus
-  />
-  <output>{output}</output>
+<div id="drag" class:error />
+<form
+  class="col jcenter"
+  on:submit|preventDefault={handleSubmit}
+  spellcheck="false"
+>
+  <article class="row acenter xfill">
+    {#if isJS}
+      <JsIcon width="20px" height="20" fill="#999" />
+    {:else}
+      <SearchIcon width="20px" height="20" fill="#999" />
+    {/if}
+    <input
+      type="text"
+      bind:value={input}
+      on:keyup={handleValue}
+      on:keydown={handleKey}
+      autofocus
+    />
+  </article>
+  <output>> {output}</output>
 </form>
 
 <style>
@@ -87,19 +105,24 @@
     border-radius: 1em;
   }
 
+  .error {
+    border-color: tomato;
+  }
+
   form {
     -webkit-app-region: no-drag;
     position: fixed;
     inset: 0.5em 1em;
-    display: flex;
-    flex-direction: column;
     padding: 0.25em 0.5em;
     transition: 200ms;
   }
 
+  article {
+    gap: 1em;
+  }
+
   input {
-    flex-grow: 1;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     color: #fafafa;
     font-family: "Operator Mono Lig";
     font-size: 24px;
