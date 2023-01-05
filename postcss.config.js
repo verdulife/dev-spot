@@ -6,7 +6,8 @@ module.exports = {
 			features: {
 				'nesting-rules': true,
 				'custom-properties': true,
-				'custom-selectors': true
+				'custom-selectors': true,
+				'oklab-function': true
 			}
 		})
 	]

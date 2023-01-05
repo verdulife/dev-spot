@@ -1,108 +1,108 @@
-@import "variables/colors.css";
-@import "variables/fonts.css";
-@import "variables/custom-media.css";
-@import "variables/custom-selector.css";
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+@import 'variables/custom-media.css';
+@import 'variables/custom-selector.css';
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  box-shadow: none;
-  image-rendering: crisp-edges;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  -webkit-tap-highlight-color: transparent;
-  font-family: var(--f-text);
-  font-size: 100%;
-  line-height: 1.4;
-  vertical-align: baseline;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-shadow: none;
+	image-rendering: crisp-edges;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: transparent;
+	font-family: var(--f-text);
+	font-size: 100%;
+	line-height: 1.4;
+	vertical-align: baseline;
 
-  &:not(progress) {
-    border: none;
-  }
+	&:not(progress) {
+		border: none;
+	}
 
-  &:not(b, strong) {
-    font-weight: lighter;
-  }
+	&:not(b, strong) {
+		font-weight: lighter;
+	}
 
-  @media (--reduced-motion) {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
-  }
+	@media (--reduced-motion) {
+		transition: none !important;
+		animation: none !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 html,
 body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 pre,
 code {
-  font-family: var(--f-code);
+	font-family: var(--f-code);
 }
 
 :--text * {
-  font-family: inherit;
+	font-family: inherit;
 }
 
 :--heading {
-  line-height: 1.2;
+	line-height: 1.2;
 
-  & * {
-    font-family: inherit;
-  }
+	& * {
+		font-family: inherit;
+	}
 }
 
 h1 {
-  font-size: clamp(30px, 10vw, 80px);
+	font-size: clamp(30px, 10vw, 80px);
 }
 h2 {
-  font-size: clamp(26px, 7vw, 60px);
+	font-size: clamp(26px, 7vw, 60px);
 }
 h3 {
-  font-size: clamp(20px, 5vw, 36px);
+	font-size: clamp(20px, 5vw, 36px);
 }
 h4 {
-  font-size: clamp(16px, 4vw, 26px);
+	font-size: clamp(16px, 4vw, 26px);
 }
 h5 {
-  font-size: clamp(12px, 3vw, 16px);
+	font-size: clamp(12px, 3vw, 16px);
 }
 h6 {
-  font-size: clamp(10px, 2vw, 12px);
+	font-size: clamp(10px, 2vw, 12px);
 }
 
 ul,
 ol {
-  list-style: none;
+	list-style: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 textarea {
-  resize: none;
+	resize: none;
 }
 
 ::selection {
-  background-color: var(--c-selection-bg);
-  color: var(--c-selection-color);
+	background-color: var(--c-selection-bg);
+	color: var(--c-selection-color);
 }
 
 :--input::placeholder {
-  color: var(--c-input-placeholder);
+	color: var(--c-input-placeholder);
 }
 
 :--input-elements {
-  accent-color: var(--c-input-elements);
+	accent-color: var(--c-input-elements);
 }

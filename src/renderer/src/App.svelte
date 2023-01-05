@@ -9,7 +9,7 @@
 	let interpreter = new Interpreter('');
 	const TEMP = [''];
 	let TEMP_INDEX = TEMP.length;
-	let input;
+	let input, inputEl;
 	let output = '';
 	let error = false;
 	let showConfig = false;
@@ -72,26 +72,35 @@
 		const { key, ctrlKey } = e;
 		if (ctrlKey && key === ',') showConfig = !showConfig;
 	}
+
+	$: if (inputEl && !showConfig) inputEl.focus();
 </script>
+
+<svelte:window on:keydown={handleConfig} />
 
 <div id="drag" class:error />
 <form class="col jcenter" on:submit|preventDefault={handleSubmit} spellcheck="false">
-	<article class="row acenter xfill">
+	<article class="row acenter xfill nowrap">
 		{#if isJS}
 			<JsIcon width="20px" height="20" fill="#999" />
 		{:else}
 			<SearchIcon width="20px" height="20" fill="#999" />
 		{/if}
-		<input type="text" bind:value={input} on:keyup={handleValue} on:keydown={handleKey} autofocus />
+		<input
+			class="grow"
+			type="text"
+			bind:this={inputEl}
+			bind:value={input}
+			on:keyup={handleValue}
+			on:keydown={handleKey}
+		/>
 	</article>
-	<output>> {output}</output>
+	<output class="xfill clamp">> {output}</output>
 </form>
 
 {#if showConfig}
 	<UserConfig />
 {/if}
-
-<svelte:window on:keydown={handleConfig} />
 
 <style lang="postcss">
 	#drag {
