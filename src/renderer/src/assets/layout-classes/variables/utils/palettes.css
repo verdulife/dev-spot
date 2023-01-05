@@ -1,0 +1,85 @@
+:root {
+  /* neutral palette */
+  --c-neutral: hsl(var(--h-neutral), var(--s-neutral), var(--l-neutral));
+  --c-neutral-100: hsl(var(--h-neutral), var(--s-neutral), var(--l-100));
+  --c-neutral-200: hsl(var(--h-neutral), var(--s-neutral), var(--l-200));
+  --c-neutral-300: hsl(var(--h-neutral), var(--s-neutral), var(--l-300));
+  --c-neutral-400: hsl(var(--h-neutral), var(--s-neutral), var(--l-400));
+  --c-neutral-500: hsl(var(--h-neutral), var(--s-neutral), var(--l-500));
+  --c-neutral-600: hsl(var(--h-neutral), var(--s-neutral), var(--l-600));
+  --c-neutral-700: hsl(var(--h-neutral), var(--s-neutral), var(--l-700));
+  --c-neutral-800: hsl(var(--h-neutral), var(--s-neutral), var(--l-800));
+  --c-neutral-900: hsl(var(--h-neutral), var(--s-neutral), var(--l-900));
+
+  /* accent palette */
+  --c-accent: hsl(var(--h-accent), var(--s-accent), var(--l-accent));
+  --c-accent-100: hsl(var(--h-accent), var(--s-accent), var(--l-100));
+  --c-accent-200: hsl(var(--h-accent), var(--s-accent), var(--l-200));
+  --c-accent-300: hsl(var(--h-accent), var(--s-accent), var(--l-300));
+  --c-accent-400: hsl(var(--h-accent), var(--s-accent), var(--l-400));
+  --c-accent-500: hsl(var(--h-accent), var(--s-accent), var(--l-500));
+  --c-accent-600: hsl(var(--h-accent), var(--s-accent), var(--l-600));
+  --c-accent-700: hsl(var(--h-accent), var(--s-accent), var(--l-700));
+  --c-accent-800: hsl(var(--h-accent), var(--s-accent), var(--l-800));
+  --c-accent-900: hsl(var(--h-accent), var(--s-accent), var(--l-900));
+
+  /* alt palette */
+  --c-alt: hsl(var(--h-alt), var(--s-alt), var(--l-alt));
+  --c-alt-100: hsl(var(--h-alt), var(--s-alt), var(--l-100));
+  --c-alt-200: hsl(var(--h-alt), var(--s-alt), var(--l-200));
+  --c-alt-300: hsl(var(--h-alt), var(--s-alt), var(--l-300));
+  --c-alt-400: hsl(var(--h-alt), var(--s-alt), var(--l-400));
+  --c-alt-500: hsl(var(--h-alt), var(--s-alt), var(--l-500));
+  --c-alt-600: hsl(var(--h-alt), var(--s-alt), var(--l-600));
+  --c-alt-700: hsl(var(--h-alt), var(--s-alt), var(--l-700));
+  --c-alt-800: hsl(var(--h-alt), var(--s-alt), var(--l-800));
+  --c-alt-900: hsl(var(--h-alt), var(--s-alt), var(--l-900));
+
+  /* success palette */
+  --c-success: hsl(var(--h-success), var(--s-success), var(--l-success));
+  --c-success-100: hsl(var(--h-success), var(--s-success), var(--l-100));
+  --c-success-200: hsl(var(--h-success), var(--s-success), var(--l-200));
+  --c-success-300: hsl(var(--h-success), var(--s-success), var(--l-300));
+  --c-success-400: hsl(var(--h-success), var(--s-success), var(--l-400));
+  --c-success-500: hsl(var(--h-success), var(--s-success), var(--l-500));
+  --c-success-600: hsl(var(--h-success), var(--s-success), var(--l-600));
+  --c-success-700: hsl(var(--h-success), var(--s-success), var(--l-700));
+  --c-success-800: hsl(var(--h-success), var(--s-success), var(--l-800));
+  --c-success-900: hsl(var(--h-success), var(--s-success), var(--l-900));
+
+  /* warning palette */
+  --c-warning: hsl(var(--h-warning), var(--s-warning), var(--l-warning));
+  --c-warning-100: hsl(var(--h-warning), var(--s-warning), var(--l-100));
+  --c-warning-200: hsl(var(--h-warning), var(--s-warning), var(--l-200));
+  --c-warning-300: hsl(var(--h-warning), var(--s-warning), var(--l-300));
+  --c-warning-400: hsl(var(--h-warning), var(--s-warning), var(--l-400));
+  --c-warning-500: hsl(var(--h-warning), var(--s-warning), var(--l-500));
+  --c-warning-600: hsl(var(--h-warning), var(--s-warning), var(--l-600));
+  --c-warning-700: hsl(var(--h-warning), var(--s-warning), var(--l-700));
+  --c-warning-800: hsl(var(--h-warning), var(--s-warning), var(--l-800));
+  --c-warning-900: hsl(var(--h-warning), var(--s-warning), var(--l-900));
+
+  /* error palette */
+  --c-error: hsl(var(--h-error), var(--s-error), var(--l-error));
+  --c-error-100: hsl(var(--h-error), var(--s-error), var(--l-100));
+  --c-error-200: hsl(var(--h-error), var(--s-error), var(--l-200));
+  --c-error-300: hsl(var(--h-error), var(--s-error), var(--l-300));
+  --c-error-400: hsl(var(--h-error), var(--s-error), var(--l-400));
+  --c-error-500: hsl(var(--h-error), var(--s-error), var(--l-500));
+  --c-error-600: hsl(var(--h-error), var(--s-error), var(--l-600));
+  --c-error-700: hsl(var(--h-error), var(--s-error), var(--l-700));
+  --c-error-800: hsl(var(--h-error), var(--s-error), var(--l-800));
+  --c-error-900: hsl(var(--h-error), var(--s-error), var(--l-900));
+
+  /* info palette */
+  --c-info: hsl(var(--h-info), var(--s-info), var(--l-info));
+  --c-info-100: hsl(var(--h-info), var(--s-info), var(--l-100));
+  --c-info-200: hsl(var(--h-info), var(--s-info), var(--l-200));
+  --c-info-300: hsl(var(--h-info), var(--s-info), var(--l-300));
+  --c-info-400: hsl(var(--h-info), var(--s-info), var(--l-400));
+  --c-info-500: hsl(var(--h-info), var(--s-info), var(--l-500));
+  --c-info-600: hsl(var(--h-info), var(--s-info), var(--l-600));
+  --c-info-700: hsl(var(--h-info), var(--s-info), var(--l-700));
+  --c-info-800: hsl(var(--h-info), var(--s-info), var(--l-800));
+  --c-info-900: hsl(var(--h-info), var(--s-info), var(--l-900));
+}

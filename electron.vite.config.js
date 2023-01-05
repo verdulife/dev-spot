@@ -1,5 +1,7 @@
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+import {resolve} from "node:path";
+import sveltePreprocess from 'svelte-preprocess';
 
 export default defineConfig({
   main: {
@@ -9,6 +11,18 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {
-    plugins: [svelte()]
+    plugins: [
+      svelte({
+      preprocess: sveltePreprocess({
+        postcss: true
+      })
+    })
+  ],
+
+    resolve: {
+      alias: {
+        $lib: resolve("./src/renderer/src/lib")
+      }
+    }
   }
 })

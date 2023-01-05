@@ -1,0 +1,79 @@
+@import "./utils/lightness.css";
+@import "./utils/palettes.css";
+
+/* Define your colors values and use them with:*/
+/* var(--c-[color]) or var(--c-[color]-[100/900]) */
+
+/* Change opacity with: */
+/* hsl(var(--a-[color]), [opacity]) */
+
+:root {
+  /* USER COLORS */
+
+  /* Accent color - Viva Magenta */
+  --value-accent: hsl(123, 29%, 75%);
+  --h-accent: 123;
+  --s-accent: 29%;
+  --l-accent: 75%;
+  --a-accent: var(--h-accent), var(--s-accent), var(--l-accent);
+  --text-accent: var(--c-neutral-900);
+
+  /* Alternative color - Plein Air */
+  --value-alt: hsl(211, 25%, 82%);
+  --h-alt: 211;
+  --s-alt: 25%;
+  --l-alt: 82%;
+  --a-alt: 211, 25%, 82%;
+  --text-alt: var(--c-neutral-900);
+
+  /* Neutral color */
+  --value-neutral: hsl(0, 0%, 98%);
+  --h-neutral: 0;
+  --s-neutral: 0%;
+  --l-neutral: 98%;
+  --a-neutral: 0, 0%, 98%;
+
+  /* Success color */
+  --value-success: hsl(132, 38%, 73%);
+  --h-success: 132;
+  --s-success: 38%;
+  --l-success: 73%;
+  --a-success: 132, 38%, 73%;
+
+  /* Warning color */
+  --value-warning: hsl(38, 100%, 71%);
+  --h-warning: 38;
+  --s-warning: 100%;
+  --l-warning: 71%;
+  --a-warning: 38, 100%, 71%;
+
+  /* Error color */
+  --value-error: hsl(359, 68%, 54%);
+  --h-error: 359;
+  --s-error: 68%;
+  --l-error: 54%;
+  --a-error: 359, 68%, 54%;
+
+  /* Information color */
+  --value-info: hsl(210, 43%, 48%);
+  --h-info: 210;
+  --s-info: 43%;
+  --l-info: 48%;
+  --a-info: 210, 43%, 48%;
+
+  /* UI COLORS */
+
+  /* Scrollbar colors */
+  --c-scroll-thumb: var(--c-accent);
+  --c-scroll-track: transparent;
+
+  /* Selection colors */
+  --c-selection-bg: var(--c-accent);
+  --c-selection-color: var(--c-neutral);
+
+  /* Input elements color */
+  --c-input-placeholder: var(--c-neutral-700);
+
+  /* Input elements color */
+  --c-input-elements: var(--c-accent);
+}

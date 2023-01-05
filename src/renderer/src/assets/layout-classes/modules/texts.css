@@ -1,0 +1,67 @@
+.system {
+  font-family: var(--f-system);
+}
+.title {
+  font-family: var(--f-title);
+}
+.text {
+  font-family: var(--f-text);
+}
+
+.tleft {
+  text-align: left;
+}
+.tcenter {
+  text-align: center;
+}
+.tright {
+  text-align: right;
+}
+.tjustify {
+  text-align: justify;
+}
+
+.ltr {
+  direction: ltr;
+}
+.rtl {
+  direction: rtl;
+}
+
+.rotated {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.vertical-lr {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clamp4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

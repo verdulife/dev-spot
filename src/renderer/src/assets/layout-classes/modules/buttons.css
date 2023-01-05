@@ -1,0 +1,113 @@
+button,
+.btn,
+.link {
+  cursor: pointer;
+}
+
+:--button {
+  display: block;
+  background-color: unset;
+  text-align: center;
+  border: 2px solid transparent;
+  padding: 12px 24px;
+  user-select: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+  transition: 200ms;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+:--link {
+  color: var(--c-accent);
+  text-decoration: none;
+}
+
+p > :--link {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+:--button.round {
+  border-radius: 0.5em;
+}
+
+:--button.outline {
+  background-color: transparent;
+}
+
+:--button.disabled {
+  cursor: not-allowed;
+  background-color: var(--c-neutral-500);
+  color: var(--c-neutral-700);
+  border-color: var(--c-neutral-500);
+}
+
+:--button.accent {
+  background-color: var(--c-accent);
+  color: var(--text-accent);
+  border-color: var(--c-accent);
+}
+:--button.alt {
+  background-color: var(--c-alt);
+  color: var(--text-alt);
+  border-color: var(--c-alt);
+}
+
+:--button.success {
+  background-color: var(--c-success);
+  color: var(--c-neutral);
+  border-color: var(--c-success);
+}
+:--button.warning {
+  background-color: var(--c-warning);
+  color: var(--c-neutral-900);
+  border-color: var(--c-warning);
+}
+:--button.error {
+  background-color: var(--c-error);
+  color: var(--c-neutral);
+  border-color: var(--c-error);
+}
+:--button.info {
+  background-color: var(--c-info);
+  color: var(--c-neutral);
+  border-color: var(--c-info);
+}
+
+:--button.accent.outline {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+:--button.alt.outline {
+  color: var(--c-alt);
+  border-color: var(--c-alt);
+}
+
+:--button.success.outline {
+  color: var(--c-success);
+  border-color: var(--c-success);
+}
+:--button.warning.outline {
+  color: var(--c-warning);
+  border-color: var(--c-warning);
+}
+:--button.error.outline {
+  color: var(--c-error);
+  border-color: var(--c-error);
+}
+:--button.info.outline {
+  color: var(--c-info);
+  border-color: var(--c-info);
+}
+
+:--button.disabled.outline {
+  color: var(--c-neutral-500);
+  border-color: var(--c-neutral-500);
+}

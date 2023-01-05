@@ -1,0 +1,11 @@
+@custom-selector :--text p, a, buttons, span, label, input, textarea, select;
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+@custom-selector :--button button, .btn;
+@custom-selector :--link a, .link;
+@custom-selector :--media img, video;
+@custom-selector :--input input, select, textarea;
+@custom-selector :--input-elements
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"],
+  progress;

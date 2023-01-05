@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Operator Mono Lig';
+	font-family: 'text';
 	src: url('OperatorMonoLig-Medium.woff2') format('woff2'), url('OperatorMonoLig-Medium.woff') format('woff'), url('OperatorMonoLig-Medium.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-	font-family: 'Operator Mono Lig';
+	font-family: 'text';
 	src: url('OperatorMonoLig-MediumItalic.woff2') format('woff2'), url('OperatorMonoLig-MediumItalic.woff') format('woff'), url('OperatorMonoLig-MediumItalic.ttf') format('truetype');
 	font-weight: normal;
 	font-style: italic;

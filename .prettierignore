@@ -1,6 +1,9 @@
+.DS_Store
+node_modules
 out
 dist
+
+# Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
-LICENSE.md
-tsconfig.json
-tsconfig.*.json
+package-lock.json
+yarn.lock

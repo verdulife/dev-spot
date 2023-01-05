@@ -7,9 +7,8 @@ import {
   nativeImage,
   globalShortcut,
 } from "electron";
-import { join } from "path";
+import { join } from "node:path";
 import { electronApp, optimizer, is } from "@electron-toolkit/utils";
-/* import { setVibrancy } from "electron-acrylic-window"; */
 
 let mainWindow, tray;
 
@@ -36,7 +35,6 @@ function createWindow() {
 
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
-    /* mainWindow.setVibrancy(); */
   });
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

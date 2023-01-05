@@ -1,0 +1,112 @@
+:--input {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 0;
+  padding: 12px 24px;
+  transition: 200ms;
+}
+
+:--input.round {
+  border-radius: 0.5em;
+}
+:--input.outline {
+  color: var(--c-neutral);
+  border-color: var(--c-neutral);
+}
+:--input.underline {
+  color: var(--c-neutral);
+  border-bottom-color: var(--c-neutral);
+
+  &:focus {
+    border-bottom-color: var(--c-input-elements);
+  }
+}
+
+:--input.disabled {
+  cursor: not-allowed;
+  background-color: var(--c-neutral-500);
+  color: var(--c-neutral-700);
+  border: 2px solid var(--c-neutral-500);
+}
+
+:--input.outline.\-100 {
+  color: var(--c-neutral-100);
+  border-color: var(--c-neutral-100);
+}
+:--input.outline.\-200 {
+  color: var(--c-neutral-200);
+  border-color: var(--c-neutral-200);
+}
+:--input.outline.\-300 {
+  color: var(--c-neutral-300);
+  border-color: var(--c-neutral-300);
+}
+:--input.outline.\-400 {
+  color: var(--c-neutral-400);
+  border-color: var(--c-neutral-400);
+}
+:--input.outline.\-500 {
+  color: var(--c-neutral-500);
+  border-color: var(--c-neutral-500);
+}
+:--input.outline.\-600 {
+  color: var(--c-neutral-600);
+  border-color: var(--c-neutral-600);
+}
+:--input.outline.\-700 {
+  color: var(--c-neutral-700);
+  border-color: var(--c-neutral-700);
+}
+:--input.outline.\-800 {
+  color: var(--c-neutral-800);
+  border-color: var(--c-neutral-800);
+}
+:--input.outline.\-900 {
+  color: var(--c-neutral-900);
+  border-color: var(--c-neutral-900);
+}
+
+:--input.underline.\-100 {
+  color: var(--c-neutral-100);
+  border-bottom-color: var(--c-neutral-100);
+}
+:--input.underline.\-200 {
+  color: var(--c-neutral-200);
+  border-bottom-color: var(--c-neutral-200);
+}
+:--input.underline.\-300 {
+  color: var(--c-neutral-300);
+  border-bottom-color: var(--c-neutral-300);
+}
+:--input.underline.\-400 {
+  color: var(--c-neutral-400);
+  border-bottom-color: var(--c-neutral-400);
+}
+:--input.underline.\-500 {
+  color: var(--c-neutral-500);
+  border-bottom-color: var(--c-neutral-500);
+}
+:--input.underline.\-600 {
+  color: var(--c-neutral-600);
+  border-bottom-color: var(--c-neutral-600);
+}
+:--input.underline.\-700 {
+  color: var(--c-neutral-700);
+  border-bottom-color: var(--c-neutral-700);
+}
+:--input.underline.\-800 {
+  color: var(--c-neutral-800);
+  border-bottom-color: var(--c-neutral-800);
+}
+:--input.underline.\-900 {
+  color: var(--c-neutral-900);
+  border-bottom-color: var(--c-neutral-900);
+}
+
+:--input[class*="outline"]:focus {
+  border-color: var(--c-input-elements);
+}
+
+:--input[class*="underline"]:focus {
+  border-bottom-color: var(--c-input-elements);
+}

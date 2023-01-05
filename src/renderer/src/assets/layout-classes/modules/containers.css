@@ -1,0 +1,235 @@
+.viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--c-scroll-thumb);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--c-scroll-track);
+  }
+}
+.scroll.snap {
+  scroll-snap-type: y mandatory;
+}
+.scroll.snap > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.slider > .slide {
+  display: inline-flex;
+  white-space: normal;
+}
+.slider.snap {
+  scroll-snap-type: x mandatory;
+}
+.slider.snap > .slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.row.reverse {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.col {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.col.reverse {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+.jstart {
+  justify-content: flex-start;
+}
+.jend {
+  justify-content: flex-end;
+}
+.jcenter {
+  justify-content: center;
+}
+.jbetween {
+  justify-content: space-between;
+}
+.jaround {
+  justify-content: space-around;
+}
+.jevenly {
+  justify-content: space-evenly;
+}
+
+.astart {
+  align-items: flex-start;
+}
+.aend {
+  align-items: flex-end;
+}
+.acenter {
+  align-items: center;
+}
+.abase {
+  align-items: baseline;
+}
+.astretch {
+  align-items: stretch;
+}
+
+.fstart {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.fend {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.fcenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.sstart {
+  align-self: flex-start;
+}
+.send {
+  align-self: flex-end;
+}
+.scenter {
+  align-self: center;
+}
+.sbase {
+  align-self: baseline;
+}
+.sstretch {
+  align-self: stretch;
+}
+
+.xfill {
+  width: 100%;
+}
+.yfill {
+  height: 100%;
+}
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.grow {
+  flex: 1 1 calc(100% / 1.2);
+}
+.grow2 {
+  flex: 1 1 calc(50% / 1.2);
+}
+.grow3 {
+  flex: 1 1 calc((100% / 3) / 1.2);
+}
+.grow4 {
+  flex: 1 1 calc(25% / 1.3);
+}
+
+xdiv {
+  width: 100%;
+  height: 1px;
+  display: flex;
+  background-color: var(--c-neutral);
+}
+ydiv {
+  width: 1px;
+  height: 100%;
+  display: flex;
+  background-color: var(--c-neutral);
+}
+
+xdiv[\@100],
+ydiv[\@100] {
+  background-color: var(--c-neutral-100);
+}
+xdiv[\@200],
+ydiv[\@200] {
+  background-color: var(--c-neutral-200);
+}
+xdiv[\@300],
+ydiv[\@300] {
+  background-color: var(--c-neutral-300);
+}
+xdiv[\@400],
+ydiv[\@400] {
+  background-color: var(--c-neutral-400);
+}
+xdiv[\@500],
+ydiv[\@500] {
+  background-color: var(--c-neutral-500);
+}
+xdiv[\@600],
+ydiv[\@600] {
+  background-color: var(--c-neutral-600);
+}
+xdiv[\@700],
+ydiv[\@700] {
+  background-color: var(--c-neutral-700);
+}
+xdiv[\@800],
+ydiv[\@800] {
+  background-color: var(--c-neutral-800);
+}
+xdiv[\@900],
+ydiv[\@900] {
+  background-color: var(--c-neutral-900);
+}
