@@ -12,6 +12,32 @@ body {
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+}
+
+.scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: turquoise;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 .row {
   display: flex;
   flex-flow: row wrap;

@@ -9,13 +9,14 @@ import {
 } from "electron";
 import { join } from "path";
 import { electronApp, optimizer, is } from "@electron-toolkit/utils";
+/* import { setVibrancy } from "electron-acrylic-window"; */
 
 let mainWindow, tray;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 600,
-    height: 80,
+    height: 500,
     frame: false,
     transparent: true,
     resizable: false,
@@ -35,6 +36,7 @@ function createWindow() {
 
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
+    /* mainWindow.setVibrancy(); */
   });
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

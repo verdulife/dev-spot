@@ -5,6 +5,7 @@
   import javascript from "highlight.js/lib/languages/javascript";
   import JsIcon from "./icons/JsIcon.svelte";
   import SearchIcon from "./icons/SearchIcon.svelte";
+  import UserConfig from "./components/UserConfig.svelte";
 
   hljs.registerLanguage("javascript", javascript);
 
@@ -14,12 +15,14 @@
   let input;
   let output = "";
   let error = false;
+  let showConfig = false;
   $: isJS = true;
 
   function handleValue() {
     try {
       const { code } = transform(input, { presets: ["env"] });
       interpreter.appendCode(code);
+
       interpreter.run();
 
       const { value } = interpreter;
@@ -70,6 +73,11 @@
       input = TEMP[TEMP_INDEX];
     }
   }
+
+  function handleConfig(e) {
+    const { key, ctrlKey } = e;
+    if (ctrlKey && key === ",") showConfig = !showConfig;
+  }
 </script>
 
 <div id="drag" class:error />
@@ -95,6 +103,12 @@
   <output>> {output}</output>
 </form>
 
+{#if showConfig}
+  <UserConfig />
+{/if}
+
+<svelte:window on:keydown={handleConfig} />
+
 <style>
   #drag {
     -webkit-app-region: drag;
@@ -102,7 +116,7 @@
     height: 80px;
     background-color: rgba(0, 0, 0, 0.8);
     border: 4px solid #111;
-    border-radius: 1em;
+    border-radius: 0.5em;
   }
 
   .error {
@@ -112,9 +126,11 @@
   form {
     -webkit-app-region: no-drag;
     position: fixed;
-    inset: 0.5em 1em;
+    inset: 0.5em 1em auto 1em;
+    height: calc(80px - 1em);
     padding: 0.25em 0.5em;
     transition: 200ms;
+    z-index: 1;
   }
 
   article {
@@ -125,7 +141,7 @@
     background-color: rgba(0, 0, 0, 0);
     color: #fafafa;
     font-family: "Operator Mono Lig";
-    font-size: 24px;
+    font-size: 22px;
     border: none;
     outline: none;
   }
