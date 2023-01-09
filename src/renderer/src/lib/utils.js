@@ -1,7 +1,11 @@
 export const defaultUserConfig = [
 	{
-		label: 'links',
-		links: [
+		label: 'Toggle js.bar keyboard showrtcut',
+		value: 'Ctrl+Spacebar'
+	},
+	{
+		label: 'Links',
+		data: [
 			{
 				label: 'MDN',
 				url: 'https://developer.mozilla.org/es/search?q=',
@@ -20,8 +24,8 @@ export const defaultUserConfig = [
 		]
 	},
 	{
-		label: 'colors',
-		colors: [
+		label: 'Colors',
+		data: [
 			{
 				label: 'Background',
 				value: 'rgba(0,0,0,0.8)'
@@ -41,8 +45,8 @@ export const defaultUserConfig = [
 		]
 	},
 	{
-		label: 'font',
-		font: [
+		label: 'Font',
+		data: [
 			{
 				label: 'Font family',
 				value: 'Operator Mono Lig'
@@ -52,5 +56,8 @@ export const defaultUserConfig = [
 				value: 'normal'
 			}
 		]
+	},
+	{
+		label: 'Open config.json'
 	}
 ];
