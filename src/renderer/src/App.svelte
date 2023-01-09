@@ -1,6 +1,8 @@
 <script>
 	import Interpreter from 'js-interpreter';
 	import { transform } from '@babel/standalone';
+	import { userConfig } from '$lib/stores';
+	import { onMount } from 'svelte';
 
 	import JsIcon from '$lib/icons/JsIcon.svelte';
 	import SearchIcon from '$lib/icons/SearchIcon.svelte';
@@ -74,6 +76,12 @@
 	}
 
 	$: if (inputEl && !showConfig) inputEl.focus();
+
+	onMount(() => {
+		document.querySelector('#app').style.cssText = `
+			--f-text: "${$userConfig.fontFamily}";
+		`;
+	});
 </script>
 
 <svelte:window on:keydown={handleConfig} />
@@ -113,7 +121,7 @@
 	}
 
 	.error {
-		border-color: var(--c-error);
+		border-color: var(--c-error) !important;
 	}
 
 	form {
