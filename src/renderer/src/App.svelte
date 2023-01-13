@@ -37,6 +37,8 @@
 
 		const inputQuery = input.split(':');
 		isJS = inputQuery.length > 1 ? false : true;
+
+		if (!isJS) error = false;
 	}
 
 	function handleSubmit() {

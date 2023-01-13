@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: dev-spot
+appId: com.electron.jsline
+productName: JSline
 directories:
   buildResources: build
 files:
@@ -11,7 +11,7 @@ asarUnpack:
   - '**/*.{node,dll}'
 afterSign: build/notarize.js
 win:
-  executableName: dev-spot
+  target: nsis
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
@@ -31,7 +31,7 @@ linux:
     - AppImage
     - snap
     - deb
-  maintainer: electronjs.org
+  maintainer: verdu.ml
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
